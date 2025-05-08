@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saraswati Kumari| Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6a0dad;
+            --secondary-color: #ffffff;
+            --accent-color: #f0e6ff;
+            --text-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--shadow-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--accent-color);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 20px 30px var(--shadow-color);
+        }
+
+        .social-icons {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            background-color: var(--text-color);
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--secondary-color);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .skills {
+            flex: 1;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        /* Education Section */
+        #education {
+            background-color: var(--accent-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -12px;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+         /* Updated Experience Section Styles */
+         #experience {
+            background-color: var(--secondary-color);
+        }
+
+        .experience-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .experience-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .experience-date {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .experience-company {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .experience-details {
+            margin-top: 20px;
+        }
+
+        .experience-details ul {
+            list-style-position: inside;
+            padding-left: 10px;
+        }
+
+        .experience-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .experience-details li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Button Group Styles */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+
+        /* Projects Section */
+        #projects {
+            background-color: var(--accent-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            padding: 5px 10px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .project-links {
+            display: flex;
+        }
+
+        .project-links a {
+            margin-right: 15px;
+            font-weight: 600;
+        }
+
+        /* Skills & Tools Section */
+        #skills {
+            background-color: var(--secondary-color);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skills-category {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .skills-category h3 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 10px;
+            padding: 8px 15px;
+            background-color: var(--accent-color);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        /* Certificates Section */
+        #certificates {
+            background-color: var(--accent-color);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certificate-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .certificate-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .certificate-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--secondary-color);
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-info {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--secondary-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--secondary-color);
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            cursor: pointer;
+        }
+
+        .theme-switcher i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .theme-options {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            display: none;
+        }
+
+        .theme-options.show {
+            display: block;
+        }
+
+        .theme-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .theme-option:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-purple {
+            background: linear-gradient(135deg, #6a0dad 50%, #ffffff 50%);
+        }
+
+        .theme-black {
+            background: linear-gradient(135deg, #000000 50%, #ffffff 50%);
+        }
+
+        .theme-pink {
+            background: linear-gradient(135deg, #ff69b4 50%, #ffffff 50%);
+        }
+
+        .theme-blue {
+            background: linear-gradient(135deg, #1e90ff 50%, #ffffff 50%);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content, .about-content, .contact-container {
+                flex-direction: column;
+            }
+
+            .hero-text, .about-text, .contact-info {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .hero-image {
+                margin-top: 50px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s;
+            }
+
+            nav ul.show {
+                left: 0;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Saraswati <span> Kumari</span></a>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span>Saraswati Kumari</span></h1>
+                <p>A passionate Front-End Developer with a strong problem-solving mindset and a drive for coding efficient solutions. Proficient in HTML, CSS, JavaScript, and front-end frameworks, committed to writing scalable, maintainable code.</p>
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="https://drive.google.com/file/d/1p_XovqNKsskiSXZIL3egtPH3cGHRvada/view?usp=sharing" class="btn btn-outline">View Resume</a>
+
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/saraswati-kumari-030060342" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/saraswatikumari123" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Profile Photo.jpg" alt="Saraswati Kumari">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm a passionate Front-End Developer currently pursuing a Web Development Diploma at NavGurukul. I have a strong foundation in web technologies and a problem-solving mindset that drives me to create efficient solutions.</p>
+                    <p>I enjoy creating websites that are not only visually appealing but also user-friendly and accessible. My goal is to build applications that solve real-world problems while providing an excellent user experience.</p>
+                    <p>When I'm not coding, you can find me participating in coding challenges, playing badminton, or exploring new places.</p>
+                </div>
+                <div class="skills">
+                    <h3>My Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML/CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>React</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Problem Solving</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Web Development Diploma</h3>
+                        <p class="timeline-date">03/2025 - Present</p>
+                        <p>NavGurukul, Udaipur, Rajasthan</p>
+                        <p>Currently pursuing a comprehensive diploma in web development with hands-on training in modern web technologies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Arts</h3>
+                        <p class="timeline-date">11/2021 - Present</p>
+                        <p>School of Open Learning (DU SOL), Delhi</p>
+                        <p>Pursuing graduation with a focus on liberal arts and interdisciplinary studies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Academic Coordinator</h3>
+                        <span class="experience-date">03/2025 - Present</span>
+                    </div>
+                    <p class="experience-company">NavGurukul</p>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Assisting students with their studies and academic progress</li>
+                            <li>Organizing study sessions and academic discussions</li>
+                            <li>Enhancing learning outcomes through structured support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 class="experience-title">JURY Member</h3>
+                        <span class="experience-date">09/2024 - 02/2025</span>
+                    </div>
+                    <p class="experience-company">NavGurukul</p>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Conducted interviews and formed a student council</li>
+                            <li>Monitored council activities to maintain accountability</li>
+                            <li>Fostered teamwork among students</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Health Coordinator</h3>
+                        <span class="experience-date">05/2024 - 08/2024</span>
+                    </div>
+                    <p class="experience-company">NavGurukul</p>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Addressed students' health concerns and offered assistance</li>
+                            <li>Organized sessions on health and hygiene</li>
+                            <li>Provided first aid when needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="event landing page picture.jpg" alt="Event Landing Page">
+                </div>
+                <div class="project-info">
+                    <h3>Event Landing Page</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <p>A responsive website built with HTML and CSS.</p>
+                    <div class="project-links">
+                        <a href="https://saraswatikumari123.github.io/Event-Landing-Page/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/saraswatikumari123/Event-Landing-Page" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="online-dictionary.jpg" alt="Online Dictionary">
+                </div>
+                <div class="project-info">
+                    <h3>Online Dictionary</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <p>Interactive online dictionary using JavaScript.</p>
+                    <div class="project-links">
+                        <a href="https://saraswatikumari123.github.io/dictionary/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/saraswatikumari123/dictionary" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="campus life.jpeg" alt="Campus Page">
+                </div>
+                <div class="project-info">
+                    <h3>Campus Page</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <p>Responsive campus information webpage.</p>
+                    <div class="project-links">
+                        <a href="https://saraswatikumari123.github.io/campus.html/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/saraswatikumari123/campus.html" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="Top-Food-Bloggers.jpg" alt="Food Blog">
+                </div>
+                <div class="project-info">
+                    <h3>Food Blog</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                    <p>Static recipe blog with clean layout.</p>
+                    <div class="project-links">
+                        <a href="https://saraswatikumari123.github.io/Food-block/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/saraswatikumari123/Food-block" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="to do task.jpg" alt="To do list">
+                </div>
+                <div class="project-info">
+                    <h3>To Do List</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Javascript</span>
+                    </div>
+                    <p>Interactive to-do list application with task management features.</p>
+                    <div class="project-links">
+                        <a href="https://saraswatikumari123.github.io/To-do-list/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/saraswatikumari123/campus.html" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="quiz ai.webp" alt="Quiz">
+                </div>
+                <div class="project-info">
+                    <h3>Quiz</h3>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Javascript</span>
+                    </div>
+                    <p>Interactive quiz application with multiple categories.</p>
+                    <div class="project-links">
+                        <a href="https://saraswatikumari123.github.io/Quiz/" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/saraswatikumari123/campus.html" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Closing projects-grid div -->
+    </div>
+</section>
+
+<!-- Skills & Tools Section -->
+<section id="skills">
+    <div class="container">
+        <h2>Skills & Tools</h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Technical Skills</h3>
+                <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Problem Solving</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Soft Skills</h3>
+                <ul class="skills-list">
+                    <li>Communication</li>
+                    <li>Leadership</li>
+                    <li>Adaptability</li>
+                    <li>Teamwork</li>
+                    <li>Time Management</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Tools</h3>
+                <ul class="skills-list">
+                    <li>Visual Studio Code</li>
+                    <li>Git & GitHub</li>
+                    <li>Canva</li>
+                    <li>Figma</li>
+                    <li>Chrome DevTools</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Languages</h3>
+                <ul class="skills-list">
+                    <li>English (Professional)</li>
+                    <li>Hindi (Native)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certificates Section -->
+<section id="certificates">
+    <div class="container">
+        <h2>Certificates</h2>
+        <div class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card">
+                <a href="https://www.guvi.in/share-certificate/Np082j700TMna16981" target="_blank" class="certificate-link">
+                    <h3>Generative AI</h3>
+                    <p class="certificate-date">Completed</p>
+                    <p>Gained knowledge of Generative AI concepts, models, and applications.</p>
+                    <span class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                </a>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card">
+                <a href="https://drive.google.com/file/d/1CUDw-GNwm347PtXr5kNkJaZa54MKrRAQ/view?usp=sharing" target="_blank" class="certificate-link">
+                    <h3>English Proficiency Certificate (FEA)</h3>
+                    <p class="certificate-date">Completed</p>
+                    <p>Successfully completed an intensive English learning program.</p>
+                    <span class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                </a>
+            </div>
+
+            <!-- Python -->
+            <div class="certificate-card">
+                <a href="https://www.guvi.in/share-certificate/U1tv2598704kDz2I63" target="_blank" class="certificate-link">
+                    <h3>Python Zero To Hero</h3>
+                    <p class="certificate-date">Completed</p>
+                    <p>Expertise in Python programming from basics to advanced concepts.</p>
+                    <span class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                </a>
+            </div>
+
+            <!-- Prompt Engineering -->
+            <div class="certificate-card">
+                <a href="https://coursera.org/share/69c7d4a3ca7364f32d4f6fd5afed8f85" target="_blank" class="certificate-link">
+                    <h3>Prompt Engineering For ChatGPT</h3>
+                    <p class="certificate-date">07/2024</p>
+                    <p>Effective interaction techniques with large language models.</p>
+                    <span class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                </a>
+            </div>
+
+            <!-- Git & GitHub -->
+            <div class="certificate-card">
+                <a href="https://coursera.org/share/0af5e7d6a347fec57d1efafaa5937b0f" target="_blank" class="certificate-link">
+                    <h3>Introduction To Git & GitHub</h3>
+                    <p class="certificate-date">Completed</p>
+                    <p>Fundamentals of version control and collaboration.</p>
+                    <span class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                </a>
+            </div>
+
+            <!-- Version Control -->
+            <div class="certificate-card">
+                <a href="https://coursera.org/share/414434987eb96b2750ad96a4ffbd5019" target="_blank" class="certificate-link">
+                    <h3>Version Control</h3>
+                    <p class="certificate-date">Completed</p>
+                    <p>Efficient code change management systems.</p>
+                    <span class="view-certificate">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Add other certificates similarly -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <p>Feel free to reach out to me for job opportunities, collaborations, or just to say hello!</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>saraswatikumari24@navgurukul.org</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 9315073850</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Udaipur, Rajasthan, India</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/saraswati-kumari-030060342" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/saraswatikumari123" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+              <form id="contactForm" action="https://formsubmit.co/el/dunazu" method="POST">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="subject">Subject</label>
+                      <input type="text" id="subject" name="subject" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" class="form-control" required></textarea>
+                  </div>
+                  <button type="submit" class="btn">Send Message</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  </section>
+  
+
+<!-- Footer -->
+<footer>
+<div class="container footer-content">
+    <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> Saraswati Kumari. All rights reserved.</p>
+</div>
+</footer>
+
+<!-- Theme Switcher -->
+<div class="theme-switcher" id="themeSwitcher">
+<i class="fas fa-palette"></i>
+<div class="theme-options" id="themeOptions">
+    <div class="theme-option theme-purple" data-theme="purple"></div>
+    <div class="theme-option theme-black" data-theme="black"></div>
+    <div class="theme-option theme-pink" data-theme="pink"></div>
+    <div class="theme-option theme-blue" data-theme="blue"></div>
+</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    hamburger.innerHTML = navMenu.classList.contains('show') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+});
+// Close menu when clicking on a link
+document.querySelectorAll('#nav-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+              navMenu.classList.remove('show');
+              hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+          });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+      });
+
+      // Set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Theme Switcher
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      const themeOptions = document.getElementById('themeOptions');
+
+      themeSwitcher.addEventListener('click', () => {
+          themeOptions.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.theme-option').forEach(option => {
+          option.addEventListener('click', function() {
+              const theme = this.getAttribute('data-theme');
+              changeTheme(theme);
+              themeOptions.classList.remove('show');
+          });
+      });
+
+      function changeTheme(theme) {
+          const root = document.documentElement;
+          
+          switch(theme) {
+              case 'purple':
+                  root.style.setProperty('--primary-color', '#6a0dad');
+                  root.style.setProperty('--accent-color', '#f0e6ff');
+                  break;
+              case 'black':
+                  root.style.setProperty('--primary-color', '#000000');
+                  root.style.setProperty('--accent-color', '#f0f0f0');
+                  break;
+              case 'pink':
+                  root.style.setProperty('--primary-color', '#ff69b4');
+                  root.style.setProperty('--accent-color', '#ffe6f2');
+                  break;
+              case 'blue':
+                  root.style.setProperty('--primary-color', '#1e90ff');
+                  root.style.setProperty('--accent-color', '#e6f2ff');
+                  break;
+          }
+      }
+
+      // Form submission
+      const contactForm = document.getElementById('contactForm');
+      
+      contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form values
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const subject = document.getElementById('subject').value;
+          const message = document.getElementById('message').value;
+          
+          // Here you would typically send the form data to a server
+          // For this example, we'll just log it and show an alert
+          console.log({name, email, subject, message});
+          
+          alert('Thank you for your message! I will get back to you soon.');
+          contactForm.reset();
+      });
+
+      // Scroll reveal animation
+      window.addEventListener('scroll', revealOnScroll);
+
+      function revealOnScroll() {
+          const sections = document.querySelectorAll('section');
+          
+          sections.forEach(section => {
+              const sectionTop = section.getBoundingClientRect().top;
+              const windowHeight = window.innerHeight;
+              
+              if (sectionTop < windowHeight - 100) {
+                  section.style.opacity = '1';
+                  section.style.transform = 'translateY(0)';
+              }
+          });
+      }
+
+      // Initialize sections with hidden state
+      document.querySelectorAll('section').forEach(section => {
+          section.style.opacity = '0';
+          section.style.transform = 'translateY(20px)';
+          section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      });
+
+      // Trigger initial reveal for hero section
+      document.getElementById('hero').style.opacity = '1';
+      document.getElementById('hero').style.transform = 'translateY(0)';
+  </script>
+</body>
+</html>
+              
